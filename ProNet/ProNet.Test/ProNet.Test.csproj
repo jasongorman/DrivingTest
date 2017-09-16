@@ -47,6 +47,7 @@
     <Compile Include="Customer\AbstractCustomerTests.cs" />
     <Compile Include="Customer\ProNetStub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unit\UnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProNet\ProNet.csproj">
