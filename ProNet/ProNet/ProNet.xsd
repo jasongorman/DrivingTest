@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Network">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Programmer">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Recommendations">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Recommendation" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+                <xs:unique name="unique-recommendations">
+                  <xs:selector xpath="Recommendation"/>
+                  <xs:field xpath="."/>
+                </xs:unique>
+              </xs:element>
+              <xs:element name="Skills">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="3" name="Skill" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+                <xs:unique name="unique-skills">
+                  <xs:selector xpath="Skill"/>
+                  <xs:field xpath="."/>
+                </xs:unique>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:unique name="unique-name">
+      <xs:selector xpath="Programmer"/>
+      <xs:field xpath="@name"/>
+    </xs:unique>
+  </xs:element>
+</xs:schema>

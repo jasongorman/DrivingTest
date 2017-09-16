@@ -1,0 +1,32 @@
+The Problem: ProNet
+ProNet is a social network for professional programmers that helps hiring managers recruit strong teams.
+ProNet - Programmers
+Programmers join ProNet with a unique identifier (their name)
+ProNet - Languages
+Programmers list 1-3 programming skills they have, in descending order of ability
+ProNet - Recommendations
+Programmers can recommend each other, creating connections
+ProNet - Data
+ProNet data is stored in an XML file
+ProNet - Metrics
+ProNet uses 3 metrics to help find strong teams
+
+Programmer Rank 
+Degrees of Separation
+Team Strength
+ProNet – Programmer Rank
+ProNet applies the Google Page Rank algorithm to iteratively calculate the rank of programmers based on recommendations
+
+PR(A) = (1 – d) + d ( PR(B)/C(B) + PR(C)/C(C) + …. PR(N)/C(N) )
+
+Where B, C…N are programmers who recommend A, d is a damping factor of 0.85 to allow PR values to “settle”, and C(N) is the number of recommendations from programmer N
+
+http://www.slideshare.net/OmkarDash/google-page-rank-algorithm 
+ProNet – Programmer Rank Spreadsheet
+Included with your solution files is an Excel spreadsheet with macros that demonstrate Programmer Rank calculations for 3 different example networks. RUN repeatedly until the values settle.
+ProNet – Degrees of Separation
+Recommendations create links between programmers. These links can be navigated in both directions (“recommends” and “recommended by”).
+ProNet – Teams
+Teams are created by selecting a skill, choosing a team leader, then selecting other programmers from the network as members.
+ProNet – Team Strength
+The strength of a team for a specific skill is calculated using the formula:
